@@ -36,7 +36,7 @@ AspectJ는 모든객체에 적용이 가능.
 Aspect(부가기능)와 Application(핵심기능)의 Linking을 하는 과정이다. 해당 객체들을 묶어 새로운 객체를 생성한다.
 
 ### Spring AOP
-이미, 위에서 Weaving 절차를 설명하였다. Spring AOP의 Weaving 절차는 RunTime이다(프록시 빈 생성하는 것, IoC 컨테이너 초기화 작업할 때, 그러니까 WAS 가동할 때). 
+Spring AOP의 Weaving 절차는 RunTime이다.(IoC 컨테이너 초기화 작업할 때). 
 인터페이스 기준으로 하는 JDK Dynamic Proxy와 Class 기준으로 하는 CGLib Proxy가 존재한다. CGLib Proxy의 경우, AspectJ의 Weaving 처럼 바이트 코드를 조작한다. SpringAOP는 JDK Dynamic Proxy 패턴을 선호한다. 또한 Proxy 패턴 자체가 인터페이스를 끼고하는 페턴이다. 
 
 ### AspectJ
