@@ -37,10 +37,10 @@ Aspect(부가기능)와 Application(핵심기능)의 Linking을 하는 과정이
 
 ### Spring AOP
 Spring AOP의 Weaving 절차는 RunTime이다.(IoC 컨테이너 초기화 작업할 때). 
-인터페이스 기준으로 하는 JDK Dynamic Proxy와 Class 기준으로 하는 CGLib Proxy가 존재한다. CGLib Proxy의 경우, AspectJ의 Weaving 처럼 바이트 코드를 조작한다. SpringAOP는 JDK Dynamic Proxy 패턴을 선호한다. 또한 Proxy 패턴 자체가 인터페이스를 끼고하는 페턴이다. 
+인터페이스 기준으로 하는 JDK Dynamic Proxy와 Class 기준으로 하는 CGLib Proxy가 존재한다. CGLib Proxy의 경우, AspectJ의 Weaving 처럼 바이트 코드를 조작한다. SpringAOP는 JDK Dynamic Proxy 패턴을 선호한다. 또한 Proxy 패턴 자체가 인터페이스를 끼고하는 패턴이다. 
 
 ### AspectJ
-실제, AJC(Apsect Compiler)를 이용하여 Woven System 생성한다. 즉 부가기능과 핵심기능이 합쳐진 클래스 파일을 생성한다. AspectJ의 Weaving 타입은 아래와 같다.  
+AJC(Apsect Compiler)를 이용하여 Woven System 생성한다. 즉 부가기능과 핵심기능이 합쳐진 클래스 파일을 생성한다. AspectJ의 Weaving 타입은 아래와 같다.  
 **Compile-Time Weaving**: Aspect의 클래스와 Aspect를 사용하는 class들을 AJC를 통해 컴파일을 한다. JAR를 이용하여 Weaving을 하는 경우, Post-Compile Weaving(Binary Weaving)을 사용하며, 일반 소스 코드의 경우, 일반 Compile-Time Weaving을 사용한다.  
 **Load-Time Weaving**: 클래스로더를 통해 클래스가 JVM에 로딩되는 시점에 클래스의 바이트 코드를 조작한다. 즉, 객체를 메모리에 적재할 때 Weaving을 실현한다. 때문에, 다른 Weaving보다 속도 측면에서는 느리다.
 
